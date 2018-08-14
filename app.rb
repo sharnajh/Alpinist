@@ -2,7 +2,7 @@ require 'sinatra'
 require 'sinatra/activerecord/rake'
 require "./models/account"
 require "./models/post"
-require "./models/profile"
+# require "./models/profile"
 
 enable :sessions
 
