@@ -1,18 +1,11 @@
-<h1>Sign In</h1>
+<% if session[:user_id] %>
 
-<form action="/signin" method="post">
-  <input type="text" name="username" id="username" placeholder="Username">
-  <input type="password" name="password" id="password" placeholder="Password">
-  <input type="submit" value="Go">
-</form>
+   <h2>Hi <%= @realname %>!</h2>
+  <a href="/signout">Sign out</a>
 
+  <a href="/post">Create a post</a>
 
-<h1>Sign Up</h1>
-
-<form action="/" method="post">
-  <input type="text" name="name" id="name" placeholder="Name">
-  <input type="text" name="email" id="email" placeholder="Email">
-  <input type="text" name="username" id="username" placeholder="Username">
-  <input type="password" name="password" id="password" placeholder="Password">
-  <input type="submit" value="Go">
-</form
+<% else %>
+  <a href="/signin">Sign In</a>
+  <a href="/signup">Sign Up</a>
+<% end %>
