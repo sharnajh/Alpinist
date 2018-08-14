@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'sinatra/activerecord/rake'
+require 'sinatra/activerecord'
 require "./models/account"
 require "./models/post"
 # require "./models/profile"
@@ -7,6 +7,7 @@ require "./models/post"
 enable :sessions
 
 set :database, {adapter: "postgresql", database: "netflixed"}
+
 
 get '/' do 
     "Hello World"
