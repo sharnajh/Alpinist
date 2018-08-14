@@ -1,3 +1,3 @@
 class Account < ActiveRecord::Base
-    has_many :postss
+    has_many :posts
 end
