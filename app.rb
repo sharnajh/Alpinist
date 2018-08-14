@@ -8,7 +8,15 @@ enable :sessions
 
 set :database, {adapter: "postgresql", database: "netflixed"}
 
-
 get '/' do 
-    "Hello World"
+    erb :index
+end
+
+post '/' do
+    @account = Account.create(
+      username: params[:username],
+      password: params[:password],
+      name: params[:name],
+      email: params[:email]
+    )
 end
