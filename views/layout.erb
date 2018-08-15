@@ -9,9 +9,9 @@
         <% if session[:user_id] %>
             <h2> <%= @user_username %></h2>
             <a href="/signout">Sign out</a>
-            <a href="/user/<%= session[:user_id] %>">Profile</a>
-            <a href="/settings">Settings</a>
-            <a href="/post">Create a post</a>
+            <a href="/user/<%= session[:user_id] %>/profile">Profile</a>
+            <a href="/user/<%= session[:user_id] %>/settings">Settings</a>
+            <a href="/user/<%= session[:user_id] %>/post">Create a post</a>
 
         <% else %>
         <a href="/signin">Sign In</a>
