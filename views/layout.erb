@@ -10,6 +10,7 @@
             <h2> <%= @user_username %></h2>
             <a href="/signout">Sign out</a>
             <a href="/user/<%= session[:user_id] %>">Profile</a>
+            <a href="/settings">Settings</a>
             <a href="/post">Create a post</a>
 
         <% else %>
