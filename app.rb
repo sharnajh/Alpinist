@@ -9,7 +9,13 @@ enable :sessions
 set :database, {adapter: "postgresql", database: "netflixed"}
 
 get '/' do 
-    erb :index
+    if session[:user_id]
+        @user = Account.find(session[:user_id])
+        @user_username = @user.username
+        erb :index
+    else
+        erb :index
+    end
 end
 
 get '/signin' do
@@ -21,13 +27,13 @@ post '/signin' do
     if @user && @user.password == params[:password]
         session[:user_id] = @user.id
         @user_username = @user.username
+        redirect to("/")
     else
-        redirect "/"
+        redirect to("/")
     end
-    erb :index
 end
 
-get '/user/:id' do
+get '/user/:id/profile' do
     if session[:user_id]
         @user = Account.find(params[:id])
         @user_username = @user.username
@@ -59,8 +65,10 @@ post '/signup' do
     redirect '/'
 end
 
-get '/post' do
+get '/user/:id/post' do
     if session[:user_id]
+        @user = Account.find(session[:user_id])
+        @user_username = @user.username
         erb :create_post
     else
         erb :signin
@@ -78,14 +86,20 @@ post '/post' do
     end
 end
 
-get '/settings' do
-    erb :settings
+get '/user/:id/settings' do
+    if session[:user_id]
+        @user = Account.find(session[:user_id])
+        @user_username = @user.username
+        erb :settings
+    else
+        redirect to("/signin")
+    end
 end
 
 delete '/delete/:id' do
     if session[:user_id]
         @user = Account.delete(params[:id])
-        redirect to("/")
+        
     else 
         redirect to("/settings")
     end
