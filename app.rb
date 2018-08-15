@@ -20,11 +20,22 @@ post '/signin' do
     @user = Account.find_by(username: params[:username])
     if @user && @user.password == params[:password]
         session[:user_id] = @user.id
-        @firstname = @user.first_name
+        @user_username = @user.username
     else
         redirect "/"
     end
     erb :index
+end
+
+get '/user/:id' do
+    if session[:user_id]
+        @user = Account.find(params[:id])
+        @user_username = @user.username
+        @user_name = "#{@user.first_name} #{@user.last_name}"
+        erb :profile
+    else
+        erb :signin
+    end
 end
 
 get "/signout" do
@@ -49,5 +60,9 @@ post '/signup' do
 end
 
 get '/post' do
-    erb :create_post
+    if session[:user_id]
+        erb :create_post
+    else
+        erb :signin
+    end
 end
