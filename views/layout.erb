@@ -6,6 +6,16 @@
 
         <body>
         <a href="/"><h1>Netflix'd</h1></a>
+        <% if session[:user_id] %>
+            <h2> <%= @user_username %></h2>
+            <a href="/signout">Sign out</a>
+            <a href="/user/<%= session[:user_id] %>">Profile</a>
+            <a href="/post">Create a post</a>
+
+        <% else %>
+        <a href="/signin">Sign In</a>
+        <a href="/signup">Sign Up</a>
+        <% end %>
             <%= yield %>
         </body>
 
