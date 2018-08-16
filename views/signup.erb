@@ -1,6 +1,6 @@
-<h2>Sign Up</h2>
 
-<form action="/signup" method="post">
+
+<%# <form action="/signup" method="post">
   <input type="text" name="first_name" id="first_name" placeholder="First Name">
   <input type="text" name="last_name" id="last_name" placeholder="Last Name">
   <input type="text" name="email" id="email" placeholder="Email">
@@ -8,4 +8,44 @@
   <input type="password" name="password" id="password" placeholder="Password">
   <input type="text" name="birthday" id="birthday" placeholder="Birthday">
   <input type="submit" value="Go">
+</form> %>
+<div id="card">
+<h2>Sign Up</h2>
+<form class="ui huge form" action="/signup" method="post">
+  <div class="two fields">
+    <div class="field">
+      <label>First Name</label>
+      <input name="first_name" id="first_name" placeholder="First Name" type="text">
+    </div>
+    <div class="field">
+      <label>Last Name</label>
+      <input name="last_name" id="last_name" placeholder="Last Name" type="text">
+    </div>
+  </div>
+  <div class="field">
+    <label>Email</label>
+    <input type="text" name="email" id="email" placeholder="Email">
+  </div>
+  <div class="two fields">
+  <div class="field">
+    <label>Username</label>
+    <input type="text" name="username" id="username" placeholder="Username">
+  </div>
+  <div class="field">
+    <label>Password</label>
+    <input type="password" name="password" id="password" placeholder="Password">
+  </div>
+  </div>
+  <div class="field">
+    <label>Birthday</label>
+    <input type="date" name="birthday" id="birthday" placeholder="Birthday">
+  </div>
+  <div class="field">
+    <div class="ui checkbox">
+      <input type="checkbox" tabindex="0" class="hidden">
+      <label>I agree to the Terms and Conditions</label>
+    </div>
+  </div>
+  <button class="fluid ui huge teal button" type="submit" value="Sign Up">Sign Up</div>
 </form>
+</div>

@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:white;
+    margin:0;
+    a:link, a:visited, a:active {
+        text-decoration: none;
+    }
+    h1, h2, h3 {
+        margin:0;
+        text-align:center;
+    }
+    #logo {
+        font-size:100px;
+    }
+    nav {
+        width:100%;
+        display: flex;
+        align-items: center;
+        padding:20px;
+        background-color:white;
+    }
+    .wrapper {
+        display:flex;
+        width:100vw;
+        justify-content: center;
+        align-items:center;
+        align-content: center;
+        #splashtxt {
+            width:500px;
+            left:0;
+            padding:50px;
+        }
+    }   #splashimg {
+            right:0;
+            bottom:0;
+            width:60%;
+    }
+    #card {
+        width:500px;
+        padding:20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 20px -9px black;
+    }
+    .posts {
+        display:flex;
+        flex-direction: column-reverse;
+    }
+    .profile-wrapper {
+        display:flex;
+        flex-direction:column;
+    }
+    .profile-info {
+        display:flex;
+        flex-direction: column;
+        padding:20px;
+        top:0;
+        background-color:white;
+        border-radius:10px;
+    }
+    #post {
+        padding: 20px;
+        box-shadow: 0px 0px 20px -9px black;
+        margin: 10px;
+        width: 500px;
+        border-radius: 10px;
+        font-size: 18px;
+    }
+}
