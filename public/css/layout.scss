@@ -9,22 +9,26 @@ body {
         margin:0;
         text-align:center;
     }
+    #logo {
+        font-size:100px;
+    }
     nav {
         width:100%;
         display: flex;
         align-items: center;
         padding:20px;
-        background-color:whitesmoke;
+        background-color:white;
     }
     .wrapper {
         display:flex;
         width:100vw;
         justify-content: center;
+        align-items:center;
         align-content: center;
-        position: absolute;
         #splashtxt {
             width:500px;
             left:0;
+            padding:50px;
         }
     }   #splashimg {
             right:0;
@@ -41,12 +45,15 @@ body {
         display:flex;
         flex-direction: column-reverse;
     }
+    .profile-wrapper {
+        display:flex;
+        flex-direction:column;
+    }
     .profile-info {
         display:flex;
         flex-direction: column;
         padding:20px;
         top:0;
-        margin-top:100px;
         background-color:white;
         border-radius:10px;
     }

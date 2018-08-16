@@ -8,18 +8,20 @@
         </head>
 
         <body>
+
         <nav>
         <a href="/"><h1>Alpinists</h1></a>
         <% if session[:user_id] %>
             <h2> <%= @user_username %></h2>
-            <a href="/signout">Sign out</a>
-            <a href="/user/<%= session[:user_id] %>/profile">Profile</a>
-            <a href="/user/<%= session[:user_id] %>/settings">Settings</a>
-            <a href="/user/<%= session[:user_id] %>/post">Create a post</a>
+            <a href="/user/<%= session[:user_id] %>/profile"><button class="ui blue button">Your Blog</button></a>
+            <a href="/user/<%= session[:user_id] %>/post"><button class="ui green button">Create a post</button></a>
+            <a href="/user/<%= session[:user_id] %>/settings"><button class="ui gray button">Settings</button></a>
+            <a href="/signout"><button class="ui red button">Sign out</button></a>
 
         <% else %>
-        <a href="/signin">Sign In</a>
-        <a href="/signup">Create your blog</a>
+        <a href="/signin">
+       <button class="ui inverted blue button">Sign In</button></a>
+        <a href="/signup"><button class="ui blue button">Sign Up</button></a>
         <% end %>
         </nav>
         <div class="wrapper">

@@ -1,4 +1,4 @@
-
+<div class="profile-wrapper">
 <div class="profile-info">
 <h2><%= @user_username %></h2>
 <div class="ui huge list">
@@ -32,9 +32,13 @@
 
 <div class="posts">
 <% @user_posts.each do |x|%>
+<% p x %>
     <div id="post">
+        <h1><%= x.post_title %></h1>
         <%= x.text_body %>
     </div>
 <% end %>
 </div>
 </div>
+</div>
+

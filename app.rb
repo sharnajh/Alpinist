@@ -35,7 +35,7 @@ post '/signin' do
         puts @name_user
         @user_email = @user.email
         @user_bday = @user.birthday.to_s
-        redirect to("/")
+        redirect to("/user/#{session[:user_id]}/profile")
     else
         redirect to("/")
     end
@@ -93,13 +93,14 @@ end
 
 post '/post' do
     if session[:user_id]
-        @post = Post.create(account_id: session[:user_id], text_body: params[:text_body])
+        @post = Post.create(account_id: session[:user_id], text_body: params[:text_body], post_title: params[:post_title])
         @user = Account.find_by(id: session[:user_id])
         @user_username = @user.username
         @user_name = "#{@user.first_name} #{@user.last_name}"
         @user_email = @user.email
         @user_bday = @user.birthday
         @textbody = @post.text_body
+        @title = @post.post_title
         redirect to("/user/#{session[:user_id]}/profile")
     else
         erb :signin
@@ -122,7 +123,7 @@ end
 delete '/delete/:id' do
     if session[:user_id]
         @user = Account.delete(params[:id])
-        
+        redirect to("/signin")
     else 
         redirect to("/settings")
     end
