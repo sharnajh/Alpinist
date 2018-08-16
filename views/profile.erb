@@ -1,2 +1,40 @@
-<h2>Profile</h2>
-Name: <%= @user_name %>
+
+<div class="profile-info">
+<h2><%= @user_username %></h2>
+<div class="ui huge list">
+  <div class="item">
+    <i class="user icon"></i>
+    <div class="content">
+      <%= @user_name %>
+    </div>
+  </div>
+  <div class="item">
+    <i class="mail icon"></i>
+    <div class="content">
+      <a href="mailto:<%= @user_email %>"><%= @user_email %></a>
+    </div>
+  </div>
+  <div class="item">
+    <i class="birthday cake icon"></i>
+    <div class="content">
+      <%= @user_bday %>
+    </div>
+  </div>
+  <div class="item">
+    <i class="book icon"></i>
+    <div class="content">
+      <%= @user_posts.length %>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div class="posts">
+<% @user_posts.each do |x|%>
+    <div id="post">
+        <%= x.text_body %>
+    </div>
+<% end %>
+</div>
+</div>

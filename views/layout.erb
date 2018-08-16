@@ -1,11 +1,15 @@
 <!DOCTYPE html>
     <html>
         <head>
-            <link rel="stylesheet" type="text/css" href="layout.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
+            <link rel="stylesheet" type="text/css" href="/css/layout.css">
         </head>
 
         <body>
-        <a href="/"><h1>Netflix'd</h1></a>
+        <nav>
+        <a href="/"><h1>Alpinists</h1></a>
         <% if session[:user_id] %>
             <h2> <%= @user_username %></h2>
             <a href="/signout">Sign out</a>
@@ -15,9 +19,13 @@
 
         <% else %>
         <a href="/signin">Sign In</a>
-        <a href="/signup">Sign Up</a>
+        <a href="/signup">Create your blog</a>
         <% end %>
+        </nav>
+        <div class="wrapper">
             <%= yield %>
+            </div>
         </body>
+        
 
 </html>

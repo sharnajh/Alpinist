@@ -1,7 +1,21 @@
-  <h2>Sign In</h2>
 
-  <form action="/signin" method="post">
+
+  <%# <form action="/signin" method="post">
     <input type="text" name="username" id="username" placeholder="Username">
     <input type="password" name="password" id="password" placeholder="Password">
     <input type="submit" value="Log In">
-  </form>
+  </form> %>
+<div id="card">
+<h2>Sign In</h2>
+  <form class="ui huge form" action="/signin" method="post">
+  <div class="field">
+    <label>Username</label>
+    <input type="text" name="username" id="username" placeholder="Username">
+  </div>
+  <div class="field">
+    <label>Password</label>
+    <input type="password" name="password" id="password" placeholder="Password">
+  </div>
+  <button class="ui teal button" type="submit" value="Log In">Log In</button>
+</form>
+</div>
