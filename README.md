@@ -1,1 +1,2 @@
-# Netflix'd
+# Alpinist
+## A blogging platform for alpinists.
