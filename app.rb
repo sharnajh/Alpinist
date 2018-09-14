@@ -8,7 +8,7 @@ enable :sessions
 
 set :database, {adapter: "postgresql", database: "netflixed"}
 
-class App < Sinatra::Base
+
 get '/' do 
     if session[:user_id]
         @user = Account.find(session[:user_id])
@@ -127,5 +127,4 @@ delete '/delete/:id' do
     else 
         redirect to("/settings")
     end
-end
 end
