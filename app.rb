@@ -6,7 +6,7 @@ require "./models/post"
 
 enable :sessions
 
-set :database, {adapter: "postgresql", database: "netflixed"}
+# set :database, {adapter: "postgresql", database: "netflixed"}
 
 
 get '/' do 
